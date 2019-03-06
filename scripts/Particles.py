@@ -70,3 +70,31 @@ class Particles:
                     self.particle_list[i].position = random.randint(0,self.num_of_e - 1)
             else:
                 self.particle_list[i].position = random.randint(0,self.num_of_e - 1)
+
+if __name__=='__main__':
+    def show(particles):
+        for n in range(len(particles.particle_list)):
+            print(n, ": ",particles.particle_list[n].position,",", particles.particle_list[n].weight)
+
+    print("initialize")
+    hoge = Particles(10,5)
+    show(hoge)
+
+    print("change a weight")
+    hoge.particle_list[0].weight = 10
+    show(hoge)
+
+    print("normalize")
+    hoge.normalize()
+    show(hoge)
+
+    print("resampling")
+    hoge.resampling()
+    show(hoge)
+
+    print("decision_making")
+    print(hoge.decision_making())
+
+    print("slide")
+    hoge.slide()
+    show(hoge)
