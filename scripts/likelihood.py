@@ -23,3 +23,11 @@ def likelihood(sensor_valuesA, sensor_valuesB):
         Error in likelihood(function)
         these arguments are incorrect types
         """)
+
+if __name__=='__main__':
+    A = [1,2,3]
+    B = [1,2,4]
+    print(A,B,"likelihood: ",likelihood(A,B))
+    A = [1,1,0,0]
+    B = [0,0,1,1]
+    print(A,B,"likelihood: ",likelihood(A,B))
