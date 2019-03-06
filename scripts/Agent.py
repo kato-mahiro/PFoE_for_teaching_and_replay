@@ -27,7 +27,7 @@ class Agent:
         return action_No
 
     def writeData(self, file_name):
-        with open(file_name,'w') as f:
+        with open('../data/'+file_name,'w') as f:
             for i in range(len(self.event_list)):
                 string = ''
                 for n in self.event_list[i].sensor_values:
@@ -38,7 +38,7 @@ class Agent:
                 f.write(string)
 
     def addData(self,file_name):
-        with open(file_name,'a') as f:
+        with open('../data/'+file_name,'a') as f:
             for i in range(len(self.event_list)):
                 string = ''
                 for n in self.event_list[i].sensor_values:
@@ -49,10 +49,19 @@ class Agent:
                 f.write(string)
 
     def readData(self,file_name):
-        with open(file_name,'r') as f:
+        with open('../data/'+file_name,'r') as f:
             for line in f:
                 l = line.split(',')
                 l_i = [int(l_s) for l_s in l]
                 self.setEvent(l_i[:-1],l_i[-1])
 
         self.particles = Particles(1000, len(self.event_list))
+
+if __name__=='__main__':
+    hoge = Agent()
+    hoge.setEvent([1,2,3],1)
+    hoge.setEvent([4,5,6],2)
+    for i in range(len(hoge.event_list)):
+        print(hoge.event_list[i].sensor_values,',',hoge.event_list[i].action_No)
+    hoge.writeData('test_data')
+    hoge.addData('test_data')
