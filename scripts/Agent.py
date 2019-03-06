@@ -63,5 +63,13 @@ if __name__=='__main__':
     hoge.setEvent([4,5,6],2)
     for i in range(len(hoge.event_list)):
         print(hoge.event_list[i].sensor_values,',',hoge.event_list[i].action_No)
+    print("---")
     hoge.writeData('test_data')
-    hoge.addData('test_data')
+    hoge.readData('test_data')
+    for i in range(len(hoge.event_list)):
+        print(hoge.event_list[i].sensor_values,',',hoge.event_list[i].action_No)
+    print("---")
+    print(hoge.getAction([1,2,3]))
+    print(hoge.getAction([4,5,6]))
+    print(hoge.getAction([1,2,0]))
+    print(hoge.getAction([4,5,0]))
