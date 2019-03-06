@@ -1,17 +1,6 @@
 #coding:utf-8
 
-class PFoE:
-    def likelihood(self, sensorA, sensorB):
-
-    def setEvent(self,sensor,action):
-
-    def writeData(self):
-
-    def addData(self):
-
-    def readData(self):
-
-    def getAction(self,Sensor):
+from scripts import PFoE
 
 if __name__=='__main__':
     test = PFoE()
