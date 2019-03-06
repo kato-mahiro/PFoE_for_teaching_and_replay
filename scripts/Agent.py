@@ -1,7 +1,7 @@
 #coding:utf-8
-from Event import Event
-from Particles import Particles
-from likelihood import likelihood
+from .Event import Event
+from .Particles import Particles
+from .likelihood import likelihood
 import sys
 
 class Agent:
